@@ -4,13 +4,13 @@ import android.content.Context;
 
 import com.example.dy.encodec.BaseMediaEncoder;
 
-public class PushEncodec  extends BasePushEncoder {
+public class AVPushEncodec extends BasePushEncoder {
 
-    private EncodecPushRender   encodecPushRender;
+    private AVEncodecPushRender encodecPushRender;
 
-    public  PushEncodec(Context context, int textureId) {
+    public AVPushEncodec(Context context, int textureId) {
         super(context);
-        encodecPushRender = new EncodecPushRender(context, textureId);
+        encodecPushRender = new AVEncodecPushRender(context, textureId);
         setRender(encodecPushRender);
         setmRenderMode(BaseMediaEncoder.RENDERMODE_CONTINUOUSLY);
     }

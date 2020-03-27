@@ -8,10 +8,9 @@ import com.example.dy.base.BaseActivity;
 import com.example.dy.base.BasePresenter;
 import com.example.dy.camera.CameraView;
 import com.example.dy.encodec.BaseMediaEncoder;
-import com.example.dy.encodec.MediaEncodec;
+import com.example.dy.encodec.AVMediaEncodec;
 import com.example.dy.widget.RecordButton;
 import com.example.livepusher.R;
-import com.github.dfqin.grantor.PermissionsUtil;
 import com.ywl5320.libmusic.WlMusic;
 import com.ywl5320.listener.OnCompleteListener;
 import com.ywl5320.listener.OnPreparedListener;
@@ -27,7 +26,7 @@ public class RecordActivity extends BaseActivity {
     @BindView(R.id.recordDetailBtn)
     RecordButton recordDetailBtn;
 
-    private MediaEncodec  mediaEncodec;
+    private AVMediaEncodec mediaEncodec;
     private WlMusic wlMusic;
     @Override
     protected void onCreateView(Bundle savedInstanceState) {
@@ -69,7 +68,7 @@ public class RecordActivity extends BaseActivity {
         wlMusic.setOnShowPcmDataListener(new OnShowPcmDataListener() {
             @Override
             public void onPcmInfo(int samplerate, int bit, int channels) {
-                mediaEncodec = new MediaEncodec(RecordActivity.this, cameraView.getTextureId());
+                mediaEncodec = new AVMediaEncodec(RecordActivity.this, cameraView.getTextureId());
                 mediaEncodec.initEncodec(cameraView.getEglContext( ), Environment.getExternalStorageDirectory().getAbsolutePath() + "/video.mp4",720, 1280, samplerate, channels);
                 mediaEncodec.setOnMediaInfoListener(new BaseMediaEncoder.OnMediaInfoListener() {
                     @Override

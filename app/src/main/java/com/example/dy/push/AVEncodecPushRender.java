@@ -13,7 +13,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 
-public class EncodecPushRender implements EGLSurfaceView.GLRender {
+public class AVEncodecPushRender implements EGLSurfaceView.GLRender {
 
     private Context context;
 
@@ -48,7 +48,7 @@ public class EncodecPushRender implements EGLSurfaceView.GLRender {
     private Bitmap bitmap;
     private int bitmapTextureid;
 
-    public EncodecPushRender(Context context, int textureid) {
+    public AVEncodecPushRender(Context context, int textureid) {
         this.context = context;
         this.textureid = textureid;
 

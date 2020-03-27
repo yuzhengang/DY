@@ -12,7 +12,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 
-public class EncodecRender implements EGLSurfaceView.GLRender {
+public class AVEncodecRender implements EGLSurfaceView.GLRender {
 
     private Context context;
 
@@ -43,7 +43,7 @@ public class EncodecRender implements EGLSurfaceView.GLRender {
     private Bitmap bitmap;
     private int bitmapTextureid;
 
-    public EncodecRender(Context context, int textureid) {
+    public AVEncodecRender(Context context, int textureid) {
         this.context = context;
         this.textureid = textureid;
         bitmap = ShaderUtil.createTextImage("视频直播和推流", 50, "#ff0000", "#00000000", 0);

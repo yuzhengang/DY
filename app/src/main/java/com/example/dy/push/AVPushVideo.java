@@ -2,7 +2,7 @@ package com.example.dy.push;
 
 import android.text.TextUtils;
 
-public class PushVideo {
+public class AVPushVideo {
 
     private  ConnectListener   connectListener;
 
